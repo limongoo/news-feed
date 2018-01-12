@@ -1,0 +1,59 @@
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  background-color: rgb(245, 245, 245);
+  color: rgb(73, 73, 73);
+}
+
+p {
+  margin-bottom: 1.3em;
+  line-height: 1.7;
+}
+
+/* Font sizing from http://type-scale.com/ */
+h1, h2, h3, h4 {
+  /* margin: 1em 0 0.5em; */
+  line-height: 1.1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 0 1rem 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.598em;
+}
+
+h2 {font-size: 2.827em;}
+
+h3 {font-size: 1.999em;}
+
+h4 {font-size: 1.414em;}
+
+figcaption, small, .font_small {font-size: 0.8em;}
+
+/* hide screen-reader only text. https://webaim.org/techniques/css/invisiblecontent/ */
+.clip {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #f15e22;
+  transition: 0.3s ease all;
+  padding: 0 0 3px;
+  border-bottom: 3px solid white;
+}
+
+a:hover {
+  color: #f15e22;
+  border-bottom: 3px solid #f15e22;
+}
