@@ -1,10 +1,11 @@
 const KEY = 'b2829c303ae04b8e9ffff24d9926712f';
-const TECH_URL = `https://newsapi.org/v2/top-headlines?sources=the-verge&apiKey=${KEY}`;
+const TECH_URL = `https://newsapi.org/v2/everything?sources=the-verge&apiKey=${KEY}`;
 
 const storeLocal = window.localStorage;
 
 export function searchNews(searchTerm, pageIndex = 0) {
-  const url = `${TECH_URL}&q=${searchTerm}&maxResults=6&startIndex=${pageIndex}`;
+  // const url = `${TECH_URL}&q=${searchTerm}&maxResults=6&startIndex=${pageIndex}`;
+  const url = `${TECH_URL}&q=${searchTerm}`;
   console.log(url);
   const data = storeLocal.getItem(url);
   if(data) return Promise.resolve(JSON.parse(data));

@@ -26,6 +26,9 @@ export default class App {
     searchNews(this.searchTerm, this.pageIndex)
       .then(data => {
         console.log(data);
+        const title = data.articles.title;
+        const image = data.articles.urlToImage;
+        console.log(image);
       });
   }
 
