@@ -1,5 +1,5 @@
 import html from './article-list.hmtl';
-import Book from './Book';
+import Article from './Article';
 import Template from '../Template';
 
 const template = new Template(html);
