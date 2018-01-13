@@ -10,8 +10,9 @@ export default class Article {
   }
 
   render() {
-    const dom =m template.render();
-  }
+    const dom = template.render();
 
-  return dom;
+
+    return dom;
+  }
 }
