@@ -1,4 +1,4 @@
-import html from './article-list.hmtl';
+import html from './article-list.html';
 import Article from './Article';
 import Template from '../Template';
 

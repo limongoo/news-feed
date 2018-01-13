@@ -9,6 +9,9 @@ import Search from '../search/Search';
 // Import New API
 import { searchNews } from '../../services/newsApi';
 
+// Import Article List
+import ArticleList from '../articles/ArticleList';
+
 const template = new Template(html);
 
 export default class App {
@@ -26,9 +29,18 @@ export default class App {
     searchNews(this.searchTerm, this.pageIndex)
       .then(data => {
         console.log(data);
-        const title = data.articles.title;
-        const image = data.articles.urlToImage;
-        console.log(image);
+        const newsArticles = data.items;
+
+        const articlesSection = this.articlesSection;
+
+        while(articlesSection.hasChildNodes()) {
+          articlesSection.removeChild(articlesSection.lastChild);
+        }
+
+        const articleList = new ArticleList(newsArticles);
+        articlesSection.appendChild(articleList.render());
+
+
       });
   }
 
