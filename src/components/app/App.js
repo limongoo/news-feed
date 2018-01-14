@@ -12,6 +12,7 @@ import { searchNews } from '../../services/newsApi';
 // Import Article List
 import ArticleList from '../articles/ArticleList';
 
+
 const template = new Template(html);
 
 export default class App {
@@ -29,7 +30,9 @@ export default class App {
     searchNews(this.searchTerm, this.pageIndex)
       .then(data => {
         console.log(data);
-        const newsArticles = data.items;
+        // articles and totalResults from api
+        const newsArticles = data.articles;
+        const total = data.totalResults;
 
         const articlesSection = this.articlesSection;
 
@@ -47,10 +50,14 @@ export default class App {
   render() {
     const dom = template.render();
 
+    this.articlesSection = dom.getElementById('news');
+
+
     // Reference search from Search.js and place to dom
     // search => this.handleSearch(search) in Search() - linked to Search() in Search.js
-    const search = new Search(search => this.handleSearch(search));
+    
     const searchBox = dom.getElementById('search');
+    const search = new Search(search => this.handleSearch(search));
     searchBox.appendChild(search.render());
     
     return dom;
