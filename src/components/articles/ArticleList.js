@@ -5,15 +5,15 @@ import Template from '../Template';
 const template = new Template(html);
 
 export default class ArticleList {
-  constructor(articles) {
-    this.articles = articles;
+  constructor(articlesConstructor) {
+    this.articlesConstructor = articlesConstructor;
   }
 
   render() {
     const dom = template.render();
     const ul = dom.querySelector('ul');
 
-    this.articles
+    this.articlesConstructor
       .map(article => new Article(article))
       .map(articleComponent => articleComponent.render())
       .forEach(articleDom => ul.appendChild(articleDom));

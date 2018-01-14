@@ -8,28 +8,44 @@ export default class Article {
   constructor(article) {
     // Get "source" from api
     this.source = article.source; 
-    
+    this.author = article.author;
+    this.title = article.title;
+    this.publishedAt = article.publishedAt;
+    this.url = article.url;
+    this.description = article.description;
+    this.image = article.urlToImage;
+  
   }
 
   render() {
     const dom = template.render();
 
-    // Set path to grab api
+    // Set path from api
     const source = this.source;
+    const author = this.author;
+    const title = this.title;
+    const publishedAt = this.publishedAt;
+    const url = this.url;
+    const description = this.description;
+    const image = this.image;
 
     // Add content from api
-    dom.querySelector('.title').textContent = source.title;
-    dom.querySelector('.author').textContent = source.author;
-    dom.querySelector('.publisher').textContent = source.id;
-    dom.querySelector('.publishedAt').textContent = source.publishedAt;
-    dom.querySelector('.url').textContent = source.url;
-    dom.querySelector('.description').textContent = source.description;
+    dom.querySelector('.title').textContent = title;
+    dom.querySelector('.author').textContent = author;
+    dom.querySelector('.publisher').textContent = source.name;
+    dom.querySelector('.publishedAt').textContent = publishedAt;
+    dom.querySelector('.url').textContent = url;
+    dom.querySelector('.description').textContent = description;
+
+    // console.log(articles[0].author);
+    // console.log(source.title);
+    // console.log(source.name);
 
     // Add src and alt to images
     const img = dom.querySelector('.newsImage');
-    if(source.imageLinks) {
-      img.setAttribute('src', source.imageLinks.newsImage);
-      img.setAttribute('alt', `${source.title} by ${source.author[0]}`);
+    if(image) {
+      img.setAttribute('src', image);
+      img.setAttribute('alt', `${title} by ${author}`);
     }
     else {
       img.classList.add('hidden');
