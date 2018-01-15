@@ -65,7 +65,7 @@ export default class App {
     const searchBox = dom.getElementById('search');
 
     // search => this.handleSearch(search) in Search() - linked to Search() in Search.js
-    const search = new Search(search => this.handleSearch(search));
+    const search = new Search(searchTerm => this.handleSearch(searchTerm));
     searchBox.appendChild(search.render());
 
     // Reference for paging
