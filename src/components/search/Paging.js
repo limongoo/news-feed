@@ -11,9 +11,9 @@ export default class Paging {
 
     update(pageIndex, perPage, total) {
         const totalPages = Math.floor(total / perPage);
-        
+
+        this.total.textContent = `${pageIndex + 1} of ${totalPages} (${total} total results)`;
         this.pageIndex = pageIndex;
-        this.total.textContent = `page ${pageIndex + 1} of ${totalPages} (${total} total results)`;
         this.previous.disabled = pageIndex <=0;
         this.next.disabled = pageIndex >= total;
     }
@@ -28,6 +28,6 @@ export default class Paging {
         this.previous.addEventListener('click', () => this.onPage(this.pageIndex - 1));
         this.next.addEventListener('click', () => this.onPage(this.pageIndex + 1));
 
-        render dom;
+        return dom;
     }
 }

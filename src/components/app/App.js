@@ -2,28 +2,29 @@
 import html from './app.html';
 import './app.css';
 import Template from '../Template';
-
-// Import Search
 import Search from '../search/Search';
-
-// Import New API
-import { searchNews } from '../../services/newsApi';
-
-// Import Article List
 import ArticleList from '../articles/ArticleList';
+import Paging from '../search/Paging';
+import { searchNews } from '../../services/newsApi';
 
 
 const template = new Template(html);
 
 export default class App {
   
-// Setting search values
+  // Setting search values
   handleSearch(searchTerm) {
     this.searchTerm = searchTerm;
     this.pageIndex = 0;
     this.runSearch();
   }
   
+  // Paging
+  handllePaging(pageIndex) {
+    this.pageIndex = pageIndex;
+    this.runSearch();
+  }
+
   // Run search function
   runSearch() {
 
@@ -44,6 +45,8 @@ export default class App {
         const articleList = new ArticleList(newsArticles);
         articlesSection.appendChild(articleList.render());
 
+        // paging update
+        this.paging.update(this.pageIndex, 20, total, this.searchTerm);
 
       });
   }
@@ -51,15 +54,20 @@ export default class App {
   render() {
     const dom = template.render();
 
+    // Reference for new section
     this.articlesSection = dom.getElementById('news');
-
 
     // Reference search from Search.js and place to dom
     const searchBox = dom.getElementById('search');
-    
+
     // search => this.handleSearch(search) in Search() - linked to Search() in Search.js
     const search = new Search(search => this.handleSearch(search));
     searchBox.appendChild(search.render());
+
+    // Reference for paging
+    const pagination = dom.getElementById('paging');
+    this.paging = new Paging(pageIndex => this.handllePaging(pageIndex));
+    pagination.appendChild(this.paging.render());
     
     return dom;
   }
