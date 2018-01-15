@@ -30,7 +30,7 @@ export default class App {
     searchNews(this.searchTerm, this.pageIndex)
       .then(data => {
         console.log(data);
-        // console.log(data.articles[0].author);
+
         // articles and totalResults from api
         const newsArticles = data.articles;
         const total = data.totalResults;
@@ -55,9 +55,9 @@ export default class App {
 
 
     // Reference search from Search.js and place to dom
-    // search => this.handleSearch(search) in Search() - linked to Search() in Search.js
-    
     const searchBox = dom.getElementById('search');
+    
+    // search => this.handleSearch(search) in Search() - linked to Search() in Search.js
     const search = new Search(search => this.handleSearch(search));
     searchBox.appendChild(search.render());
     

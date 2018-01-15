@@ -21,3 +21,24 @@
 #search-button:hover {
   background-color: #be4a1d;
 }
+
+/*  -------- Media Queries ------- */
+
+/* Mobile */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #search-box {
+    width: 50%;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 480px) and (max-width: 1200px) {
+  #search-box {
+    width: 60%;
+  } 
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+
+}

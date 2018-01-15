@@ -34,7 +34,7 @@ export default class Article {
     dom.querySelector('.author').textContent = author;
     dom.querySelector('.publisher').textContent = source.name;
     dom.querySelector('.publishedAt').textContent = publishedAt;
-    dom.querySelector('.url').textContent = url;
+    // dom.querySelector('.url').textContent = url;
     dom.querySelector('.description').textContent = description;
 
     // console.log(articles[0].author);
