@@ -9,3 +9,7 @@ main {
 footer {
   padding: 2rem;
 }
+
+.hidden {
+  display: none;
+}

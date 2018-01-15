@@ -28,6 +28,8 @@ export default class App {
   // Run search function
   runSearch() {
 
+    this.loading.classList.remove('hidden');
+
     searchNews(this.searchTerm, this.pageIndex)
       .then(data => {
         console.log(data);
@@ -47,12 +49,14 @@ export default class App {
 
         // paging update
         this.paging.update(this.pageIndex, 20, total, this.searchTerm);
-
+        this.loading.classList.add('hidden');
       });
   }
 
   render() {
     const dom = template.render();
+
+    this.loading = dom.getElementById('loading');
 
     // Reference for new section
     this.articlesSection = dom.getElementById('news');
