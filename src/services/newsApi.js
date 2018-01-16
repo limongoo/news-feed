@@ -6,7 +6,7 @@ const TECH_URL = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=${
 const storeLocal = window.localStorage;
 
 export function searchNews(searchTerm, pageIndex = 0) {
-  const url = `${TECH_URL}&q=${searchTerm}&maxResults=40&startIndex=${pageIndex}`;
+  const url = `${TECH_URL}&q=${searchTerm}&maxResults=6&startIndex=${pageIndex}`;
   console.log(url);
 
   // Get local storage

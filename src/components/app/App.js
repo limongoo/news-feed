@@ -48,7 +48,7 @@ export default class App {
         articlesSection.appendChild(articleList.render());
 
         // paging update
-        this.paging.update(this.pageIndex, 40, total, this.searchTerm);
+        this.paging.update(this.pageIndex, 6, total, this.searchTerm);
         this.loading.classList.add('hidden');
       });
   }

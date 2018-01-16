@@ -14,7 +14,6 @@ export default class Search {
     console.log(this.searchInput.value);
     this.getSearch(this.searchInput.value);
   }
-  
 
   render() {
     const dom = template.render();

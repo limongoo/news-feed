@@ -1,6 +1,7 @@
 .article {
-    list-style-type: none;
-    padding: 2rem 0;
+  list-style-type: none;
+  padding: 2rem 0;
+  transition: 0.3s ease all;
 }
 
 /*  -------- Media Queries ------- */
@@ -8,18 +9,24 @@
 /* Desktop */
 @media screen and (min-width: 1200px) {
   .title {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
+    margin: 1rem 0 0;
   }
   
   .list-container {
-      display: flex;
-      /* max-width: 1200px; */
-      margin: 0 auto;
-      flex-wrap: wrap;
+    display: flex;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    flex-wrap: wrap;
   }
 
   .article {
-      flex: 0 0 28%;
-      padding: 2rem 1.5rem;
+    flex: 0 0 28%;
+    padding: 2rem 1.5rem;
+  }
+
+  .article:hover {
+    background-color: rgb(230, 227, 227);
+    margin: -1rem 0 0 0;
   }
 }
