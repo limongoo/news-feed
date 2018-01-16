@@ -20,7 +20,7 @@ export default class App {
   }
   
   // Paging
-  handllePaging(pageIndex) {
+  handlePaging(pageIndex) {
     this.pageIndex = pageIndex;
     this.runSearch();
   }
@@ -48,7 +48,7 @@ export default class App {
         articlesSection.appendChild(articleList.render());
 
         // paging update
-        this.paging.update(this.pageIndex, 20, total, this.searchTerm);
+        this.paging.update(this.pageIndex, 40, total, this.searchTerm);
         this.loading.classList.add('hidden');
       });
   }
@@ -69,9 +69,9 @@ export default class App {
     searchBox.appendChild(search.render());
 
     // Reference for paging
-    const pagination = dom.getElementById('paging');
-    this.paging = new Paging(pageIndex => this.handllePaging(pageIndex));
-    pagination.appendChild(this.paging.render());
+    const pagingSection = dom.getElementById('paging');
+    this.paging = new Paging(pageIndex => this.handlePaging(pageIndex));
+    pagingSection.appendChild(this.paging.render());
     
     return dom;
   }

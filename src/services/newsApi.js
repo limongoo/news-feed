@@ -5,7 +5,8 @@ const TECH_URL = `https://newsapi.org/v2/everything?sources=the-verge&apiKey=${K
 const storeLocal = window.localStorage;
 
 export function searchNews(searchTerm, pageIndex = 0) {
-  const url = `${TECH_URL}&q=${searchTerm}&maxResults=20&startIndex=${pageIndex}`;
+  // const url = `${TECH_URL}&q=${searchTerm}&maxResults=20&startIndex=${pageIndex}`;
+  const url = `${TECH_URL}&q=${searchTerm}&maxResults=40&startIndex=${pageIndex}`;
   console.log(url);
 
   // Get local storage
