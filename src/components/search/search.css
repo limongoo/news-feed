@@ -7,7 +7,7 @@
 }
 
 #search-button {
-  background-color: #f15e22;
+  background-color: #d63d00;
   color: white;
   font: 1.1rem "Work Sans", sans serif;
   letter-spacing: 1px;
@@ -19,7 +19,7 @@
 }
 
 #search-button:hover {
-  background-color: #be4a1d;
+  background-color: #ff4800;
 }
 
 /*  -------- Media Queries ------- */

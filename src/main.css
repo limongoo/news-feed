@@ -46,15 +46,15 @@ img {
 
 a {
   text-decoration: none;
-  color: #f15e22;
+  color: #d63d00;
   transition: 0.3s ease all;
   padding: 0 0 3px;
   border-bottom: 3px solid white;
 }
 
 a:hover {
-  color: #f15e22;
-  border-bottom: 3px solid #f15e22;
+  color: #d63d00;
+  border-bottom: 3px solid #d63d00;
 }
 
 /*  -------- Media Queries ------- */
