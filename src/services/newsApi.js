@@ -1,5 +1,6 @@
 const KEY = 'b2829c303ae04b8e9ffff24d9926712f';
-const TECH_URL = `https://newsapi.org/v2/everything?sources=the-verge&apiKey=${KEY}`;
+// const TECH_URL = `https://newsapi.org/v2/everything?sources=the-verge&apiKey=${KEY}`;
+const TECH_URL = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=${KEY}`;
 
 // Put in local storage
 const storeLocal = window.localStorage;
